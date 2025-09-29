@@ -1,0 +1,254 @@
+[
+    {
+        "provinsi": "DKI Jakarta",
+        "kabupaten": "Jakarta Pusat",
+        "kecamatan": "Menteng",
+        "kelurahan": "Menteng",
+        "kodepos": "10310"
+    },
+    {
+        "provinsi": "DKI Jakarta",
+        "kabupaten": "Jakarta Pusat",
+        "kecamatan": "Menteng",
+        "kelurahan": "Pegangsaan",
+        "kodepos": "10320"
+    },
+    {
+        "provinsi": "DKI Jakarta",
+        "kabupaten": "Jakarta Pusat",
+        "kecamatan": "Menteng",
+        "kelurahan": "Kebon Sirih",
+        "kodepos": "10340"
+    },
+    {
+        "provinsi": "DKI Jakarta",
+        "kabupaten": "Jakarta Selatan",
+        "kecamatan": "Kebayoran Baru",
+        "kelurahan": "Senayan",
+        "kodepos": "12190"
+    },
+    {
+        "provinsi": "DKI Jakarta",
+        "kabupaten": "Jakarta Selatan",
+        "kecamatan": "Kebayoran Baru",
+        "kelurahan": "Melawai",
+        "kodepos": "12160"
+    },
+    {
+        "provinsi": "DKI Jakarta",
+        "kabupaten": "Jakarta Barat",
+        "kecamatan": "Taman Sari",
+        "kelurahan": "Krukut",
+        "kodepos": "11140"
+    },
+    {
+        "provinsi": "Jawa Barat",
+        "kabupaten": "Bandung",
+        "kecamatan": "Coblong",
+        "kelurahan": "Dago",
+        "kodepos": "40135"
+    },
+    {
+        "provinsi": "Jawa Barat",
+        "kabupaten": "Bandung",
+        "kecamatan": "Coblong",
+        "kelurahan": "Lebak Gede",
+        "kodepos": "40132"
+    },
+    {
+        "provinsi": "Jawa Barat",
+        "kabupaten": "Bandung",
+        "kecamatan": "Cidadap",
+        "kelurahan": "Hegarmanah",
+        "kodepos": "40141"
+    },
+    {
+        "provinsi": "Jawa Barat",
+        "kabupaten": "Bogor",
+        "kecamatan": "Bogor Tengah",
+        "kelurahan": "Paledang",
+        "kodepos": "16122"
+    },
+    {
+        "provinsi": "Jawa Barat",
+        "kabupaten": "Bogor",
+        "kecamatan": "Bogor Tengah",
+        "kelurahan": "Tegallega",
+        "kodepos": "16129"
+    },
+    {
+        "provinsi": "Jawa Tengah",
+        "kabupaten": "Semarang",
+        "kecamatan": "Semarang Tengah",
+        "kelurahan": "Purwodinatan",
+        "kodepos": "50131"
+    },
+    {
+        "provinsi": "Jawa Tengah",
+        "kabupaten": "Semarang",
+        "kecamatan": "Semarang Tengah",
+        "kelurahan": "Kauman",
+        "kodepos": "50132"
+    },
+    {
+        "provinsi": "Jawa Tengah",
+        "kabupaten": "Solo",
+        "kecamatan": "Laweyan",
+        "kelurahan": "Laweyan",
+        "kodepos": "57146"
+    },
+    {
+        "provinsi": "Jawa Timur",
+        "kabupaten": "Surabaya",
+        "kecamatan": "Gubeng",
+        "kelurahan": "Gubeng",
+        "kodepos": "60281"
+    },
+    {
+        "provinsi": "Jawa Timur",
+        "kabupaten": "Surabaya",
+        "kecamatan": "Gubeng",
+        "kelurahan": "Airlangga",
+        "kodepos": "60286"
+    },
+    {
+        "provinsi": "Jawa Timur",
+        "kabupaten": "Malang",
+        "kecamatan": "Klojen",
+        "kelurahan": "Kasin",
+        "kodepos": "65117"
+    },
+    {
+        "provinsi": "Bali",
+        "kabupaten": "Denpasar",
+        "kecamatan": "Denpasar Selatan",
+        "kelurahan": "Sanur",
+        "kodepos": "80228"
+    },
+    {
+        "provinsi": "Bali",
+        "kabupaten": "Badung",
+        "kecamatan": "Kuta",
+        "kelurahan": "Kuta",
+        "kodepos": "80361"
+    },
+    {
+        "provinsi": "Sumatera Utara",
+        "kabupaten": "Medan",
+        "kecamatan": "Medan Kota",
+        "kelurahan": "Kesawan",
+        "kodepos": "20111"
+    },
+    {
+        "provinsi": "Sumatera Barat",
+        "kabupaten": "Padang",
+        "kecamatan": "Padang Barat",
+        "kelurahan": "Belakang Tangsi",
+        "kodepos": "25115"
+    },
+    {
+    "provinsi": "DKI Jakarta",
+    "kabupaten": "Jakarta Pusat",
+    "kecamatan": "Menteng",
+    "kelurahan": "Menteng",
+    "kodepos": "10310"
+  },
+  {
+    "provinsi": "DKI Jakarta",
+    "kabupaten": "Jakarta Selatan",
+    "kecamatan": "Kebayoran Baru",
+    "kelurahan": "Melawai",
+    "kodepos": "12160"
+  },
+  {
+    "provinsi": "DKI Jakarta",
+    "kabupaten": "Jakarta Barat",
+    "kecamatan": "Taman Sari",
+    "kelurahan": "Krukut",
+    "kodepos": "11140"
+  },
+  {
+    "provinsi": "Jawa Barat",
+    "kabupaten": "Bandung",
+    "kecamatan": "Coblong",
+    "kelurahan": "Dago",
+    "kodepos": "40135"
+  },
+  {
+    "provinsi": "Jawa Barat",
+    "kabupaten": "Bogor",
+    "kecamatan": "Bogor Tengah",
+    "kelurahan": "Paledang",
+    "kodepos": "16122"
+  },
+  {
+    "provinsi": "Jawa Tengah",
+    "kabupaten": "Semarang",
+    "kecamatan": "Semarang Tengah",
+    "kelurahan": "Kauman",
+    "kodepos": "50132"
+  },
+  {
+    "provinsi": "Jawa Tengah",
+    "kabupaten": "Solo",
+    "kecamatan": "Laweyan",
+    "kelurahan": "Laweyan",
+    "kodepos": "57146"
+  },
+  {
+    "provinsi": "Jawa Timur",
+    "kabupaten": "Surabaya",
+    "kecamatan": "Gubeng",
+    "kelurahan": "Airlangga",
+    "kodepos": "60286"
+  },
+  {
+    "provinsi": "Jawa Timur",
+    "kabupaten": "Malang",
+    "kecamatan": "Klojen",
+    "kelurahan": "Kasin",
+    "kodepos": "65117"
+  },
+  {
+    "provinsi": "Bali",
+    "kabupaten": "Denpasar",
+    "kecamatan": "Denpasar Selatan",
+    "kelurahan": "Sanur",
+    "kodepos": "80228"
+  },
+  {
+    "provinsi": "Sumatera Utara",
+    "kabupaten": "Medan",
+    "kecamatan": "Medan Kota",
+    "kelurahan": "Kesawan",
+    "kodepos": "20111"
+  },
+  {
+    "provinsi": "Sumatera Barat",
+    "kabupaten": "Padang",
+    "kecamatan": "Padang Barat",
+    "kelurahan": "Belakang Tangsi",
+    "kodepos": "25115"
+  },
+  {
+    "provinsi": "Sulawesi Selatan",
+    "kabupaten": "Makassar",
+    "kecamatan": "Tamalanrea",
+    "kelurahan": "Tamalanrea Indah",
+    "kodepos": "90245"
+  },
+  {
+    "provinsi": "Kalimantan Timur",
+    "kabupaten": "Balikpapan",
+    "kecamatan": "Balikpapan Selatan",
+    "kelurahan": "Sepinggan",
+    "kodepos": "76115"
+  },
+  {
+    "provinsi": "Papua",
+    "kabupaten": "Jayapura",
+    "kecamatan": "Abepura",
+    "kelurahan": "Yabansai",
+    "kodepos": "99224"
+  }
+]

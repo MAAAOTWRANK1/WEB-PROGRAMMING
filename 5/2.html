@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pencarian Kode Pos Indonesia</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+
+        .search-form {
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e6ed;
+            border-radius: 8px;
+            font-size: 16px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-group select:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-btn {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .search-btn:active {
+            transform: translateY(0);
+        }
+
+        .result-container {
+            margin-top: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #667eea;
+            display: none;
+        }
+
+        .result-container.show {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .result-info {
+            flex: 1;
+        }
+
+        .result-info h3 {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 5px;
+        }
+
+        .result-info p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .postal-code {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .no-result {
+            text-align: center;
+            color: #666;
+            font-style: italic;
+            padding: 20px;
+        }
+
+        .loading {
+            text-align: center;
+            color: #667eea;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .search-form {
+                padding: 25px;
+            }
+            
+            .result-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .postal-code {
+                margin-top: 15px;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏛️ Pencarian Kode Pos</h1>
+            <p>Temukan kode pos berdasarkan wilayah Indonesia</p>
+        </div>
+
+        <div class="search-form">
+            <form id="postalForm">
+                <div class="form-group">
+                    <label for="provinsi">Provinsi:</label>
+                    <select id="provinsi" name="provinsi" required>
+                        <option value="">-- Pilih Provinsi --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="kabupaten">Kabupaten/Kota:</label>
+                    <select id="kabupaten" name="kabupaten" required disabled>
+                        <option value="">-- Pilih Kabupaten/Kota --</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="kecamatan">Kecamatan:</label>
+                    <select id="kecamatan" name="kecamatan" required disabled>
+                        <option value="">-- Pilih Kecamatan --</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="search-btn">🔍 Cari Kode Pos</button>
+            </form>
+
+            <div id="resultContainer" class="result-container">
+                <h2>📍 Hasil Pencarian:</h2>
+                <div id="resultContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data akan dimuat dari file JSON
+        let postalData = [];
+
+        // Fungsi untuk memuat data dari JSON
+        async function loadPostalData() {
+            try {
+                const response = await fetch('kodepos.json');
+                postalData = await response.json();
+                populateProvinces();
+            } catch (error) {
+                console.error('Error loading postal data:', error);
+                // Jika gagal memuat, gunakan data contoh
+                loadSampleData();
+            }
+        }
+
+        // Data contoh jika file JSON tidak tersedia
+        function loadSampleData() {
+            postalData = [
+                {
+                    "provinsi": "DKI Jakarta",
+                    "kabupaten": "Jakarta Pusat",
+                    "kecamatan": "Menteng",
+                    "kelurahan": "Menteng",
+                    "kodepos": "10310"
+                },
+                {
+                    "provinsi": "DKI Jakarta",
+                    "kabupaten": "Jakarta Pusat",
+                    "kecamatan": "Menteng",
+                    "kelurahan": "Pegangsaan",
+                    "kodepos": "10320"
+                },
+                {
+                    "provinsi": "DKI Jakarta",
+                    "kabupaten": "Jakarta Selatan",
+                    "kecamatan": "Kebayoran Baru",
+                    "kelurahan": "Senayan",
+                    "kodepos": "12190"
+                },
+                {
+                    "provinsi": "Jawa Barat",
+                    "kabupaten": "Bandung",
+                    "kecamatan": "Coblong",
+                    "kelurahan": "Dago",
+                    "kodepos": "40135"
+                },
+                {
+                    "provinsi": "Jawa Barat",
+                    "kabupaten": "Bogor",
+                    "kecamatan": "Bogor Tengah",
+                    "kelurahan": "Paledang",
+                    "kodepos": "16122"
+                }
+            ];
+            populateProvinces();
+        }
+
+        // Mengisi dropdown provinsi
+        function populateProvinces() {
+            const provinsiSelect = document.getElementById('provinsi');
+            const provinces = [...new Set(postalData.map(item => item.provinsi))].sort();
+            
+            provinsiSelect.innerHTML = '<option value="">-- Pilih Provinsi --</option>';
+            provinces.forEach(province => {
+                const option = document.createElement('option');
+                option.value = province;
+                option.textContent = province;
+                provinsiSelect.appendChild(option);
+            });
+        }
+
+        // Mengisi dropdown kabupaten berdasarkan provinsi
+        function populateKabupaten(selectedProvinsi) {
+            const kabupatenSelect = document.getElementById('kabupaten');
+            const kecamatanSelect = document.getElementById('kecamatan');
+            
+            // Reset kabupaten dan kecamatan
+            kabupatenSelect.innerHTML = '<option value="">-- Pilih Kabupaten/Kota --</option>';
+            kecamatanSelect.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
+            kecamatanSelect.disabled = true;
+            
+            if (selectedProvinsi) {
+                const kabupatens = [...new Set(
+                    postalData
+                        .filter(item => item.provinsi === selectedProvinsi)
+                        .map(item => item.kabupaten)
+                )].sort();
+                
+                kabupatens.forEach(kabupaten => {
+                    const option = document.createElement('option');
+                    option.value = kabupaten;
+                    option.textContent = kabupaten;
+                    kabupatenSelect.appendChild(option);
+                });
+                
+                kabupatenSelect.disabled = false;
+            } else {
+                kabupatenSelect.disabled = true;
+            }
+        }
+
+        // Mengisi dropdown kecamatan berdasarkan provinsi dan kabupaten
+        function populateKecamatan(selectedProvinsi, selectedKabupaten) {
+            const kecamatanSelect = document.getElementById('kecamatan');
+            
+            kecamatanSelect.innerHTML = '<option value="">-- Pilih Kecamatan --</option>';
+            
+            if (selectedProvinsi && selectedKabupaten) {
+                const kecamatans = [...new Set(
+                    postalData
+                        .filter(item => 
+                            item.provinsi === selectedProvinsi && 
+                            item.kabupaten === selectedKabupaten
+                        )
+                        .map(item => item.kecamatan)
+                )].sort();
+                
+                kecamatans.forEach(kecamatan => {
+                    const option = document.createElement('option');
+                    option.value = kecamatan;
+                    option.textContent = kecamatan;
+                    kecamatanSelect.appendChild(option);
+                });
+                
+                kecamatanSelect.disabled = false;
+            } else {
+                kecamatanSelect.disabled = true;
+            }
+        }
+
+        // Event listeners untuk dropdown
+        document.getElementById('provinsi').addEventListener('change', function() {
+            const selectedProvinsi = this.value;
+            populateKabupaten(selectedProvinsi);
+            hideResults();
+        });
+
+        document.getElementById('kabupaten').addEventListener('change', function() {
+            const selectedProvinsi = document.getElementById('provinsi').value;
+            const selectedKabupaten = this.value;
+            populateKecamatan(selectedProvinsi, selectedKabupaten);
+            hideResults();
+        });
+
+        document.getElementById('kecamatan').addEventListener('change', function() {
+            hideResults();
+        });
+
+        // Menangani form submit
+        document.getElementById('postalForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const provinsi = document.getElementById('provinsi').value;
+            const kabupaten = document.getElementById('kabupaten').value;
+            const kecamatan = document.getElementById('kecamatan').value;
+            
+            if (!provinsi || !kabupaten || !kecamatan) {
+                alert('Harap lengkapi semua pilihan!');
+                return;
+            }
+            
+            searchPostalCode(provinsi, kabupaten, kecamatan);
+        });
+
+        // Mencari kode pos
+        function searchPostalCode(provinsi, kabupaten, kecamatan) {
+            showLoading();
+            
+            setTimeout(() => {
+                const results = postalData.filter(item =>
+                    item.provinsi === provinsi &&
+                    item.kabupaten === kabupaten &&
+                    item.kecamatan === kecamatan
+                );
+                
+                displayResults(results, provinsi, kabupaten, kecamatan);
+            }, 500);
+        }
+
+        // Menampilkan loading
+        function showLoading() {
+            const resultContainer = document.getElementById('resultContainer');
+            const resultContent = document.getElementById('resultContent');
+            
+            resultContent.innerHTML = '<div class="loading">🔍 Mencari kode pos...</div>';
+            resultContainer.classList.add('show');
+        }
+
+        // Menyembunyikan hasil
+        function hideResults() {
+            const resultContainer = document.getElementById('resultContainer');
+            resultContainer.classList.remove('show');
+        }
+
+        // Menampilkan hasil pencarian
+        function displayResults(results, provinsi, kabupaten, kecamatan) {
+            const resultContainer = document.getElementById('resultContainer');
+            const resultContent = document.getElementById('resultContent');
+            
+            if (results.length === 0) {
+                resultContent.innerHTML = `
+                    <div class="no-result">
+                        ❌ Tidak ditemukan kode pos untuk:<br>
+                        <strong>${kecamatan}, ${kabupaten}, ${provinsi}</strong>
+                    </div>
+                `;
+            } else {
+                let html = '';
+                results.forEach(result => {
+                    html += `
+                        <div class="result-item">
+                            <div class="result-info">
+                                <h3>${result.kelurahan || result.kecamatan}</h3>
+                                <p>📍 ${result.kecamatan}, ${result.kabupaten}</p>
+                                <p>🗺️ ${result.provinsi}</p>
+                            </div>
+                            <div class="postal-code">${result.kodepos}</div>
+                        </div>
+                    `;
+                });
+                resultContent.innerHTML = html;
+            }
+            
+            resultContainer.classList.add('show');
+        }
+
+        // Memuat data saat halaman dimuat
+        window.addEventListener('DOMContentLoaded', loadPostalData);
+    </script>
+</body>
+</html>

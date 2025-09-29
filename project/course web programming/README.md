@@ -82,5 +82,7 @@ Project ini adalah website pembelajaran web programming yang menyediakan tutoria
 4. **External Resources:** Link ke sumber pembelajaran tambahan
 5. **Modern UI/UX:** Clean design dengan card-based layout
 
+![](image.png)
+
 
 Website ini dirancang sebagai platform pembelajaran yang mudah diakses dan user-friendly untuk memulai journey dalam web programming.

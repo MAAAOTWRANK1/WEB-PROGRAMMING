@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Dropdown Dinamis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    select {
+      margin: 5px;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Dynamic Drop Down List dengan JavaScript</h2>
+
+  <form name="form1">
+    <!-- Dropdown kategori -->
+    <select name="Category" onchange="SelectCat2()">
+      <option value="">Pilih Jenis Produk</option>
+      <option value="Desktop">Desktop</option>
+      <option value="Laptop">Laptop</option>
+      <option value="Smartphone">Smartphone</option>
+    </select>
+
+    <!-- Dropdown merk -->
+    <select name="SubCat">
+      <option value="">Pilih Merk</option>
+    </select>
+  </form>
+
+  <script>
+    function SelectCat2(){
+        removeAllOptions(document.form1.SubCat);
+        addOption(document.form1.SubCat, "", "Pilih Merk", "");
+        if(document.form1.Category.value == 'Desktop') {
+            addOption(document.form1.SubCat,"Acer", "Acer");
+            addOption(document.form1.SubCat,"Dell", "Dell");
+            addOption(document.form1.SubCat,"Lenovo", "Lenovo");
+        }
+        if(document.form1.Category.value == 'Laptop') {
+            addOption(document.form1.SubCat,"Asus", "Asus");
+            addOption(document.form1.SubCat,"Acer", "Acer");
+            addOption(document.form1.SubCat,"Sony Vaio", "Sony Vaio");
+        }
+        if(document.form1.Category.value == 'Smartphone') {
+            addOption(document.form1.SubCat,"Samsung", "Samsung");
+            addOption(document.form1.SubCat,"LG", "LG");
+            addOption(document.form1.SubCat,"Sony Xperia", "Sony Xperia");
+        }
+    }
+
+    function removeAllOptions(selectbox) {
+        for(let i = selectbox.options.length - 1; i >= 0; i--) {
+            selectbox.remove(i);
+        }
+    }
+
+    function addOption(selectbox, value, text) {
+        let optn = document.createElement("OPTION");
+        optn.text = text;
+        optn.value = value;
+        selectbox.options.add(optn);
+    }
+  </script>
+</body>
+</html>

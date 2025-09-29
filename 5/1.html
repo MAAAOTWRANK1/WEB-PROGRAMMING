@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Registrasi Mahasiswa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    form {
+      width: 350px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background: #f9f9f9;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    #suggestions {
+      border: 1px solid #ccc;
+      background: #fff;
+      margin-top: 5px;
+      max-height: 100px;
+      overflow-y: auto;
+      display: none;
+      position: absolute;
+      width: 320px;
+    }
+    #suggestions div {
+      padding: 8px;
+      cursor: pointer;
+    }
+    #suggestions div:hover {
+      background: #f0f0f0;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px;
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <h2>Form Registrasi Mahasiswa</h2>
+  <form id="regForm">
+    <label for="nama">Nama Mahasiswa</label>
+    <input type="text" id="nama" name="nama" autocomplete="off">
+    <div id="suggestions"></div>
+
+    <label for="nrp">Nrp</label>
+    <input type="text" id="nrp" name="nrp">
+
+    <label for="matkul">Mata Kuliah</label>
+    <input type="text" id="matkul" name="matkul">
+
+    <label for="dosen">Dosen</label>
+    <input type="text" id="dosen" name="dosen">
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    // Data rekomendasi nama
+    const namaList = ["Nur Akbar", "Ahmad Fauzi", "Budi Santoso", "Citra Lestari", "Dewi Ayu", "Eka Saputra"];
+
+    const namaInput = document.getElementById("nama");
+    const suggestionsBox = document.getElementById("suggestions");
+
+    namaInput.addEventListener("input", function() {
+      const input = this.value.toLowerCase();
+      suggestionsBox.innerHTML = "";
+
+      if (input) {
+        const filtered = namaList.filter(n => n.toLowerCase().includes(input));
+        if (filtered.length > 0) {
+          suggestionsBox.style.display = "block";
+          filtered.forEach(n => {
+            const div = document.createElement("div");
+            div.textContent = n;
+            div.addEventListener("click", () => {
+              namaInput.value = n;
+              suggestionsBox.style.display = "none";
+            });
+            suggestionsBox.appendChild(div);
+          });
+        } else {
+          suggestionsBox.style.display = "none";
+        }
+      } else {
+        suggestionsBox.style.display = "none";
+      }
+    });
+
+    // Validasi Form
+    document.getElementById("regForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nama = document.getElementById("nama").value.trim();
+      const nrp = document.getElementById("nrp").value.trim();
+      const matkul = document.getElementById("matkul").value.trim();
+      const dosen = document.getElementById("dosen").value.trim();
+
+      if (!nama) {
+        alert("Nama tidak boleh kosong!");
+        return;
+      }
+      if (!nrp) {
+        alert("NIM tidak boleh kosong!");
+        return;
+      }
+      if (!matkul) {
+        alert("Mata kuliah tidak boleh kosong!");
+        return;
+      }
+      if (!dosen) {
+        alert("Dosen tidak boleh kosong!");
+        return;
+      }
+
+      alert("Registrasi berhasil!\nNama: " + nama + "\nNIM: " + nim + "\nMatkul: " + matkul + "\nDosen: " + dosen);
+    });
+  </script>
+</body>
+</html>
