@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Project Feedback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Mini Project Feedback</h2>
+    <p>Tell us what you think about your friend's project demo!</p>
+
+    <form id="feedbackForm">
+      <label for="projectName">Project Name</label>
+      <input type="text" id="projectName" name="projectName" required>
+
+      <label for="reviewer">Your Name</label>
+      <input type="text" id="reviewer" name="reviewer" required>
+
+      <label for="rating">Rating (1–5)</label>
+      <select id="rating" name="rating" required>
+        <option value="">Choose...</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+      </select>
+
+      <label for="comments">Feedback</label>
+      <textarea id="comments" name="comments" rows="4" placeholder="Type your feedback..."></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+
+    <div id="responseMessage"></div>
+    <hr>
+    <h3>💬 Live Feedback</h3>
+    <div id="feedbackList">Loading feedback...</div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

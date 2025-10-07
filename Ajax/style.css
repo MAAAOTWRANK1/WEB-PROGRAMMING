@@ -1,0 +1,70 @@
+body {
+  background: #f6f7fb;
+  font-family: 'Poppins', sans-serif;
+}
+
+.container {
+  width: 450px;
+  margin: 80px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+  color: #2b5cff;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-top: 4px;
+}
+
+button {
+  width: 100%;
+  background: #2b5cff;
+  color: white;
+  border: none;
+  padding: 12px;
+  margin-top: 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1a3fd1;
+}
+
+#responseMessage {
+  margin-top: 15px;
+  text-align: center;
+  font-weight: bold;
+}
+
+#feedbackList {
+  margin-top: 15px;
+  font-size: 0.95em;
+}
+
+.feedback-card {
+  background: #f2f5ff;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-left: 5px solid #2b5cff;
+  border-radius: 8px;
+}
+.feedback-card b {
+  color: #2b5cff;
+}
