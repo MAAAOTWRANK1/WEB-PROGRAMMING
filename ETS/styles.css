@@ -1,0 +1,81 @@
+:root {
+  --primary: #0056D2;   /* biru */
+  --accent:  #FFA336;   /* oranye */
+  --dark:    #0b1b37;
+  --muted:   #7486a8;
+  --bg-soft: #f5f8ff;
+  --white:   #ffffff;
+  --gradient: linear-gradient(135deg, #e7efff 0%, #f7fbff 45%, #e7f0ff 100%);
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; color: #1b2a4a; }
+
+/* Navbar */
+.navbar { backdrop-filter: saturate(1.2) blur(8px); background: rgba(255,255,255,.85) !important; }
+.navbar .nav-link { font-weight: 600; }
+.navbar .btn-primary { background: var(--primary); border-color: var(--primary); }
+
+/* Hero */
+.hero {
+  position: relative;
+  background: radial-gradient(1100px 600px at 10% 10%, #e9f1ff 0%, #fff 40%),
+              url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; /* ilustrasi mobil */
+  min-height: 88vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.hero-overlay { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,27,55,.55), rgba(11,27,55,.15)); }
+.hero-content { position: relative; z-index: 2; }
+.hero h1 { font-family: Poppins, Inter, sans-serif; font-weight: 800; letter-spacing: .2px; }
+.hero .lead { color: #edf2ff; max-width: 56ch; }
+
+.btn-glow { box-shadow: 0 6px 20px rgba(0,86,210,.35); transition: transform .15s ease, box-shadow .2s ease; }
+.btn-glow:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(0,86,210,.5); }
+.btn-accent { background: var(--accent); border-color: var(--accent); color: #1b2a4a; font-weight: 700; }
+.btn-accent:hover { filter: brightness(.98); box-shadow: 0 10px 26px rgba(255,163,54,.45); }
+
+/* Animated mini map + car */
+.map-track { position: absolute; inset: auto 0 24px 0; height: 6px; background: rgba(255,255,255,.65); margin-inline: 10%; border-radius: 999px; }
+.car { position: absolute; bottom: 6px; left: 10%; width: 56px; height: 28px; background: var(--accent); border-radius: 8px; animation: drive 14s linear infinite; box-shadow: 0 6px 14px rgba(0,0,0,.25); }
+.car::before { content: ""; position: absolute; inset: -8px -8px 8px -8px; border-top-left-radius: 16px; border-top-right-radius: 16px; background: rgba(255,255,255,.25); }
+.car::after { content: "\F7E1"; font-family: "bootstrap-icons"; font-style: normal; font-weight: normal; position: absolute; inset: 0; display: grid; place-items: center; color: #1b2a4a; font-size: 20px; }
+@keyframes drive { from { left: 10%; } to { left: 80%; } }
+
+/* Section spacing */
+section { padding: 80px 0; }
+
+/* Benefits */
+.benefits { background: var(--gradient); }
+.benefit-card { background: var(--white); border: 1px solid #e8eefc; border-radius: 18px; padding: 24px; height: 100%; box-shadow: 0 6px 24px rgba(11,27,55,.06); }
+.benefit-card i { font-size: 28px; color: var(--primary); }
+
+/* Testimonials */
+.testi-card { background: #fff; border: 1px solid #e8eefc; border-radius: 18px; box-shadow: 0 8px 30px rgba(11,27,55,.06); }
+.avatar { width: 48px; height: 48px; border-radius: 999px; object-fit: cover; }
+.stars { color: #FFC107; letter-spacing: 2px; }
+
+/* Services */
+.service-img { border-radius: 18px; box-shadow: 0 20px 50px rgba(11,27,55,.15); }
+
+/* Promo */
+.promo { background: radial-gradient(900px 400px at 10% 10%, #072153 0%, #0b1b37 35%, #071633 100%); color: #eaf2ff; border-radius: 20px; overflow: hidden; }
+.promo .badge { background: rgba(255,255,255,.1); border: 1px dashed rgba(255,255,255,.4); }
+.promo .code { color: var(--accent); font-family: Poppins, Inter, sans-serif; font-weight: 800; letter-spacing: .5px; }
+
+/* Lead form */
+.lead-wrap { background: var(--primary); color: #eaf2ff; border-radius: 24px; }
+.form-control, .form-select { border-radius: 12px; padding: 12px 14px; }
+
+/* FAQ */
+.faq-accordion .accordion-button { font-weight: 600; }
+
+/* Footer */
+footer { background: #06132b; color: #c9d6ff; }
+footer a { color: #eaf2ff; text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+
+/* Reveal on scroll */
+.reveal { opacity: 0; transform: translateY(18px); transition: all .6s ease; }
+.reveal.show { opacity: 1; transform: translateY(0); }

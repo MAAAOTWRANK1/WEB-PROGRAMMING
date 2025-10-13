@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Es Travel – Jasa Travel & Pengiriman Antar Kota</title>
+  <meta name="description" content="Platform kolaborasi travel antar kota, mobil sewa, dan komunitas supir daerah. Pesan penumpang & titip barang cepat dan fleksibel." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <!-- Custom CSS -->
+  <link href="styles.css" rel="stylesheet" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top py-2 shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#" style="color: var(--primary);">
+        <i class="bi bi-signpost-2-fill me-2"></i>Es Travel
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain" aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMain">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#layanan">Layanan</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testi">Testimoni</a></li>
+          <li class="nav-item"><a class="nav-link" href="#promo">Promo</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kontak">Hubungi Kami</a></li>
+        </ul>
+        <div class="ms-lg-3 d-flex gap-2">
+          <a href="#form" class="btn btn-primary btn-glow"><i class="bi bi-geo-alt me-1"></i> Pesan Sekarang</a>
+          <a href="#form" class="btn btn-accent"><i class="bi bi-box-seam me-1"></i> Titip Barang</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero text-white">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content text-center">
+      <span class="badge rounded-pill bg-light text-dark mb-3 px-3 py-2">Platform kolaborasi travel • mobil sewa • komunitas supir daerah</span>
+      <h1 class="display-5 fw-bold mb-3">Jasa Travel & Pengiriman Antar Kota <span style="color: var(--accent)">Terpercaya</span>, Cepat, dan Fleksibel!</h1>
+      <p class="lead mx-auto mb-4">
+        Temukan mobil travel terdekat dari komunitas terpercaya. Cukup pesan,
+        kami antar Anda dan barang Anda sampai tujuan.
+      </p>
+      <div class="d-flex gap-2 justify-content-center">
+        <a href="#form" class="btn btn-lg btn-accent px-4 btn-glow">Pesan Sekarang</a>
+        <a href="#form" class="btn btn-lg btn-outline-light px-4">Titip Barang</a>
+      </div>
+    </div>
+    <div class="map-track"></div>
+    <div class="car" aria-hidden="true"></div>
+  </header>
+
+  <!-- Benefits -->
+  <section class="benefits">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family: Poppins, Inter, sans-serif;">Mengapa Memilih Kami?</h2>
+        <p class="text-muted">Fokus pada kecepatan, fleksibilitas, dan jaringan yang luas.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3 reveal">
+          <div class="benefit-card h-100">
+            <div class="d-flex align-items-start gap-3">
+              <i class="bi bi-intersect"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Jaringan Luas</h6>
+                <p class="mb-0 text-muted">Terhubung dengan ratusan komunitas mobil travel daerah.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 reveal">
+          <div class="benefit-card h-100">
+            <div class="d-flex align-items-start gap-3">
+              <i class="bi bi-clock-history"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Fleksibel & Cepat</h6>
+                <p class="mb-0 text-muted">Booking kapan saja, bahkan di hari yang sama.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 reveal">
+          <div class="benefit-card h-100">
+            <div class="d-flex align-items-start gap-3">
+              <i class="bi bi-box-seam"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Dual Service</h6>
+                <p class="mb-0 text-muted">Antar penumpang atau kirim barang; satu platform.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 reveal">
+          <div class="benefit-card h-100">
+            <div class="d-flex align-items-start gap-3">
+              <i class="bi bi-headset"></i>
+              <div>
+                <h6 class="fw-bold mb-1">Dukungan 24/7</h6>
+                <p class="mb-0 text-muted">Tim siap membantu kapan saja.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="layanan">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6 reveal">
+          <img src="https://digital-bucket.prod.bfi.co.id/assets/Blog/Blog%20New/Inspiratif!%20Begini%20Cara%20Memulai%20Usaha%20Travel%20Mobil%20Keuntungan%20Berlipat/Usaha%20Travel%20Mobil.jpg" alt="Mobil travel" class="img-fluid service-img" />
+        </div>
+        <div class="col-lg-6 reveal">
+          <h2 class="fw-bold" style="font-family: Poppins, Inter, sans-serif;">Layanan Kami</h2>
+          <p class="text-muted">Pilih kebutuhan Anda: perjalanan nyaman untuk penumpang, atau pengiriman barang tanpa ribet.</p>
+
+          <div class="d-flex align-items-start gap-3 mb-4">
+            <span class="badge text-bg-primary rounded-pill p-3"><i class="bi bi-people"></i></span>
+            <div>
+              <h5 class="mb-1">Layanan Penumpang</h5>
+              <p class="mb-2 text-muted">Sistem carpooling travel antar kota dengan berbagai pilihan rute dan jadwal.</p>
+              <a href="#form" class="btn btn-sm btn-primary btn-glow"><i class="bi bi-calendar2-week me-1"></i> Lihat Jadwal Travel</a>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-start gap-3">
+            <span class="badge text-bg-warning rounded-pill p-3"><i class="bi bi-truck"></i></span>
+            <div>
+              <h5 class="mb-1">Layanan Pengiriman Barang</h5>
+              <p class="mb-2 text-muted">Kirim paket antar kota, dijemput ke lokasi Anda. Aman dan mudah dilacak.</p>
+              <a href="#form" class="btn btn-sm btn-accent"><i class="bi bi-send me-1"></i> Kirim Sekarang</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testi" class="bg-light">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="fw-bold" style="font-family: Poppins, Inter, sans-serif;">Apa Kata Pelanggan</h2>
+      </div>
+      <div id="carouselTestimonials" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="p-4 testi-card h-100">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img class="avatar" src="https://i.pravatar.cc/80?img=5" alt="Rina" />
+                    <div>
+                      <strong>Rina</strong>
+                      <div class="small text-muted">Surabaya</div>
+                    </div>
+                  </div>
+                  <div class="stars mb-2">★★★★★</div>
+                  <p class="mb-0">“Saya pesan malam, pagi sudah dijemput! Layanannya cepat banget.”</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="p-4 testi-card h-100">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img class="avatar" src="https://i.pravatar.cc/80?img=15" alt="Budi" />
+                    <div>
+                      <strong>Budi</strong>
+                      <div class="small text-muted">Malang</div>
+                    </div>
+                  </div>
+                  <div class="stars mb-2">★★★★★</div>
+                  <p class="mb-0">“Titip barang aman, sopirnya ramah.”</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="p-4 testi-card h-100">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img class="avatar" src="https://i.pravatar.cc/80?img=30" alt="Agus" />
+                    <div>
+                      <strong>Agus</strong>
+                      <div class="small text-muted">Solo</div>
+                    </div>
+                  </div>
+                  <div class="stars mb-2">★★★★★</div>
+                  <p class="mb-0">“Lebih fleksibel daripada travel biasa!”</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Duplicate slide for longer carousel play -->
+          <div class="carousel-item">
+            <div class="row g-4">
+              <div class="col-md-4">
+                <div class="p-4 testi-card h-100">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img class="avatar" src="https://i.pravatar.cc/80?img=20" alt="Sari" />
+                    <div>
+                      <strong>Sari</strong>
+                      <div class="small text-muted">Gresik</div>
+                    </div>
+                  </div>
+                  <div class="stars mb-2">★★★★★</div>
+                  <p class="mb-0">“Koordinasi adminnya responsif, sopir tepat waktu.”</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="p-4 testi-card h-100">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img class="avatar" src="https://i.pravatar.cc/80?img=12" alt="Dimas" />
+                    <div>
+                      <strong>Dimas</strong>
+                      <div class="small text-muted">Sidoarjo</div>
+                    </div>
+                  </div>
+                  <div class="stars mb-2">★★★★★</div>
+                  <p class="mb-0">“Harga masuk akal, mobil bersih dan nyaman.”</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="p-4 testi-card h-100">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <img class="avatar" src="https://i.pravatar.cc/80?img=8" alt="Lukman" />
+                    <div>
+                      <strong>Lukman</strong>
+                      <div class="small text-muted">Kediri</div>
+                    </div>
+                  </div>
+                  <div class="stars mb-2">★★★★★</div>
+                  <p class="mb-0">“Tracking barang mudah—sangat membantu.”</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselTestimonials" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Promo -->
+  <section id="promo">
+    <div class="container">
+      <div class="promo p-4 p-lg-5 reveal">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <span class="badge rounded-pill text-uppercase mb-2">🎉 Promo Oktober</span>
+            <h3 class="fw-bold mb-1">Diskon 20% untuk rute Surabaya – Malang</h3>
+            <p class="mb-0">Berlaku hingga 31 Oktober 2025. Kuota terbatas setiap hari.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <div class="small mb-2">Gunakan kode:</div>
+            <div class="display-6 code">GTRAVEL20</div>
+            <a href="#form" class="btn btn-accent mt-3"><i class="bi bi-ticket-perforated me-1"></i> Pakai Sekarang</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Capture -->
+  <section id="form" aria-labelledby="form-title">
+    <div class="container">
+      <div class="lead-wrap p-4 p-lg-5 reveal">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <h2 id="form-title" class="fw-bold" style="font-family: Poppins, Inter, sans-serif;">Butuh Travel Sekarang?</h2>
+            <p class="mb-0">Isi formulir di samping. Tim kami akan menghubungi Anda <strong>dalam 10 menit</strong>.</p>
+          </div>
+          <div class="col-lg-7">
+            <form class="row g-3" id="leadForm" novalidate>
+              <div class="col-md-6">
+                <label for="name" class="form-label">Nama Lengkap</label>
+                <input type="text" class="form-control" id="name" placeholder="Nama Anda" required />
+                <div class="invalid-feedback">Nama wajib diisi.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="wa" class="form-label">Nomor WhatsApp</label>
+                <input type="tel" class="form-control" id="wa" placeholder="08xxxxxxxxxx" required pattern="^(\+?\d{9,15})$|^(0\d{8,14})$" />
+                <div class="invalid-feedback">Nomor WhatsApp valid wajib diisi.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="from" class="form-label">Kota Asal</label>
+                <input type="text" class="form-control" id="from" placeholder="Surabaya" required />
+                <div class="invalid-feedback">Kota asal wajib diisi.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="to" class="form-label">Kota Tujuan</label>
+                <input type="text" class="form-control" id="to" placeholder="Malang" required />
+                <div class="invalid-feedback">Kota tujuan wajib diisi.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="service" class="form-label">Pilihan Layanan</label>
+                <select id="service" class="form-select" required>
+                  <option value="" selected disabled>Pilih layanan</option>
+                  <option value="penumpang">Penumpang</option>
+                  <option value="barang">Barang</option>
+                </select>
+                <div class="invalid-feedback">Pilih salah satu layanan.</div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-light text-dark btn-glow"><i class="bi bi-send me-1"></i> Kirim Permintaan</button>
+              </div>
+              <div class="col-12 d-none" id="formAlert">
+                <div class="alert alert-success mt-2 mb-0" role="alert">
+                  Terima kasih! Permintaan Anda sudah kami terima. Admin akan menghubungi via WhatsApp.
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="bg-light">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <h2 class="fw-bold" style="font-family: Poppins, Inter, sans-serif;">FAQ</h2>
+          <p class="text-muted mb-0">Pertanyaan yang sering diajukan.</p>
+        </div>
+        <div class="col-lg-6">
+          <div class="accordion faq-accordion" id="accordionFAQ">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q1">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1" aria-expanded="true" aria-controls="a1">
+                  Bagaimana cara memesan mobil travel?
+                </button>
+              </h2>
+              <div id="a1" class="accordion-collapse collapse show" aria-labelledby="q1" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">
+                  Isi formulir dan tim kami akan menghubungi Anda <strong>dalam 10 menit</strong>.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q2">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2" aria-expanded="false" aria-controls="a2">
+                  Apakah layanan tersedia 24 jam?
+                </button>
+              </h2>
+              <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">
+                  Ya, beberapa mitra travel kami tersedia hingga malam hari.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q3">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3" aria-expanded="false" aria-controls="a3">
+                  Apakah bisa mengirim barang besar?
+                </button>
+              </h2>
+              <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">
+                  Bisa, selama masih muat di bagasi mobil travel.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="q4">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a4" aria-expanded="false" aria-controls="a4">
+                  Bagaimana metode pembayarannya?
+                </button>
+              </h2>
+              <div id="a4" class="accordion-collapse collapse" aria-labelledby="q4" data-bs-parent="#accordionFAQ">
+                <div class="accordion-body">
+                  Transfer bank, e-wallet, atau cash ke sopir.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-5 pb-4" id="kontak">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-md-5">
+          <h5 class="fw-bold">Es Travel</h5>
+          <p class="mb-2">Platform travel & pengiriman antar kota.</p>
+          <div class="d-flex gap-3 fs-5">
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+            <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h6 class="fw-bold">Kontak</h6>
+          <ul class="list-unstyled small mb-0">
+            <li>📍 Alamat kantor pusat – Keputih</li>
+            <li>📞 WhatsApp/Hotline – 089532126378</li>
+            <li>✉️ Email – support@es-travel.id</li>
+          </ul>
+        </div>
+        <div class="col-md-3">
+          <h6 class="fw-bold">Navigasi Cepat</h6>
+          <ul class="list-unstyled small mb-0">
+            <li><a href="#">Tentang</a></li>
+            <li><a href="#">Syarat & Ketentuan</a></li>
+            <li><a href="#">Kebijakan Privasi</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-top border-light-subtle pt-3 small text-center">
+        Copyright © 2025 Es Travel. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="backToTop" class="btn btn-primary position-fixed" style="right: 16px; bottom: 16px; display:none" aria-label="Kembali ke atas">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Custom JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
